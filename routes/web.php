@@ -15,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
-Route::group(["prefix" => "tc"], function () {
+})->name("login");
+Route::post('/auth', "LoginController@__invoke");
+Route::middleware('auth')->prefix("tc")->group(function () {
     Route::get("all", "typeChangeGetController@__invoke");
     Route::post("create", "typeChangeCreateController@__invoke");
     Route::get("edit/{typeChange}", "typeChangeRenderController@__invoke");

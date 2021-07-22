@@ -7,8 +7,9 @@ use managmentChange\application\TypeChangeList;
 use Illuminate\Support\Facades\View;
 use managmentChange\application\TypeChangeDelete;
 use managmentChange\Domain\TypeChangeId;
+use Illuminate\Routing\Controller as BaseController;
 
-class typeChangeDeleteController
+class typeChangeDeleteController extends BaseController
 {
     private TypeChangeDelete $deleter;
 

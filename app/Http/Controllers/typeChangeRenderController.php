@@ -12,8 +12,8 @@ use managmentChange\Domain\TypeChangeBuy;
 use managmentChange\Domain\TypeChangeDomain;
 use managmentChange\Domain\TypeChangeId;
 use managmentChange\Domain\TypeChangeSales;
-
-class typeChangeRenderController
+use Illuminate\Routing\Controller as BaseController;
+class typeChangeRenderController extends BaseController 
 {
     private TypeChangeFinder $finder;
 

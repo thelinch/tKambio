@@ -11,8 +11,8 @@ use managmentChange\Domain\TypeChangeBuy;
 use managmentChange\Domain\TypeChangeDomain;
 use managmentChange\Domain\TypeChangeId;
 use managmentChange\Domain\TypeChangeSales;
-
-class typeChangeUpdateController
+use Illuminate\Routing\Controller as BaseController;
+class typeChangeUpdateController extends BaseController
 {
     private TypeChangeUpdate $updater;
 

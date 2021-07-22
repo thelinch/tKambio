@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api;
 
 use Illuminate\Support\Facades\App;
 use managmentChange\application\TypeChangeList;
 use Illuminate\Support\Facades\View;
 use Illuminate\Routing\Controller as BaseController;
 
-class typeChangeGetController extends BaseController
+class typeChangeGetApiController extends BaseController
 {
     private TypeChangeList $list;
 
@@ -21,6 +21,6 @@ class typeChangeGetController extends BaseController
         $list = $this->list->__invoke()->map(function ($typeChangeDomain) {
             return $typeChangeDomain->jsonSerialize();
         });
-        return view('typeChange.list')->with("typeChanges", $list);
+        return $list;
     }
 }

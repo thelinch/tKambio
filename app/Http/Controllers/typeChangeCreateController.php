@@ -13,8 +13,9 @@ use managmentChange\Domain\TypeChangeId;
 use managmentChange\Domain\TypeChangeSales;
 use src\Shared\Domain\UuidGenerator;
 use src\Shared\Infraestructure\RamseyUuidGenerator;
+use Illuminate\Routing\Controller as BaseController;
 
-class typeChangeCreateController
+class typeChangeCreateController extends BaseController
 {
     private TypeChangeCreate $creator;
     private UuidGenerator $uuidGenerator;
@@ -22,7 +23,7 @@ class typeChangeCreateController
     public function __construct()
     {
         $this->creator = App::make("TypeChangeCreate");
-        $this->uuidGenerator =App::make(RamseyUuidGenerator::class);
+        $this->uuidGenerator = App::make(RamseyUuidGenerator::class);
         $this->list = App::make("TypeChangeList");
     }
 
@@ -31,7 +32,7 @@ class typeChangeCreateController
         $tcData = $request->only(["tc_venta", "tc_compra"]);
         $tcData["id"] = $this->uuidGenerator->generate();
         $this->creator->__invoke(new TypeChangeId($tcData["id"]), new TypeChangeSales($tcData["tc_venta"]), new TypeChangeBuy($tcData["tc_compra"]));
-       /*  $list = $this->list->__invoke()->map(function ($typeChangeDomain) {
+        /*  $list = $this->list->__invoke()->map(function ($typeChangeDomain) {
             return $typeChangeDomain->jsonSerialize();
         }); */
         return redirect("/tc/all");
