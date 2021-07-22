@@ -39,6 +39,11 @@ class EloquentTypeChangeRepository implements TypeChangeIRepository
         $typeChangeModel = $this->model->find($id->value());
         $typeChangeModel->delete();
     }
+    function findId(TypeChangeId $id): TypeChangeDomain
+    {
+        $typeChangeModel = $this->model->where("id", $id->value())->first();
+        return $typeChangeModel != null ? $this->transformTypeChangeModelToDomain($typeChangeModel) : null;
+    }
     private function  transformTypeChangeDomainToModel(TypeChangeDomain $domain): typeChange
     {
         $typeChange = new typeChange();

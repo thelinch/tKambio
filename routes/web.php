@@ -19,6 +19,8 @@ Route::get('/', function () {
 Route::group(["prefix" => "tc"], function () {
     Route::get("all", "typeChangeGetController@__invoke");
     Route::post("create", "typeChangeCreateController@__invoke");
+    Route::get("edit/{typeChange}", "typeChangeRenderController@__invoke");
+    Route::get("/delete/{typeChange}", "typeChangeDeleteController@__invoke");
     Route::get("create", function () {
         return view('typeChange.create');
     });

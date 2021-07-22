@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use managmentChange\application\TypeChangeCreate;
 use managmentChange\application\TypeChangeDelete;
+use managmentChange\application\TypeChangeFinder;
 use managmentChange\application\TypeChangeList;
 use managmentChange\application\TypeChangeUpdate;
 use managmentChange\Domain\TypeChangeIRepository;
@@ -43,6 +44,9 @@ class AppServiceProvider extends ServiceProvider
         });
         $this->app->bind("TypeChangeUpdate", function ($app) {
             return new TypeChangeUpdate($app->make("managmentChange\infraestructure\EloquentTypeChangeRepository"));
+        });
+        $this->app->bind("TypeChangeFinder", function ($app) {
+            return new TypeChangeFinder($app->make("managmentChange\infraestructure\EloquentTypeChangeRepository"));
         });
     }
 
