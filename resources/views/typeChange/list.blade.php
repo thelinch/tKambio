@@ -43,7 +43,6 @@
 
     async function deleteTc(tcId) {
 
-        console.log("eliminjneto", "/tc/delete/" + tcId)
         const {
             isConfirmed
         } = await Swal.fire({
@@ -59,7 +58,6 @@
     }
 
     function init() {
-        console.log("ejecutando...")
         const deleteTcButtons = document.getElementsByClassName("btn-danger")
         for (let index = 0; index < deleteTcButtons.length; index++) {
             const element = deleteTcButtons[index];
