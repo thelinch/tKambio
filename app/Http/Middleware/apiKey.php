@@ -18,10 +18,10 @@ class apiKey
     public function handle(Request $request, Closure $next)
     {
         if (!$request->apiKey) {
-            throw new Error("No tiene autorizacion");
+            abort(403, 'Unauthorized action.');
         }
         if ($request->apiKey !== "AbCd123") {
-            throw new Error("No tiene autorizacion");
+            abort(403, 'Unauthorized action.');
         }
         return $next($request);
     }
