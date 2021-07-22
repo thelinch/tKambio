@@ -29,10 +29,7 @@ class EloquentTypeChangeRepository implements TypeChangeIRepository
 
     function update(TypeChangeDomain $typeChange): void
     {
-        $typeChangeModel = $this->model->find($typeChange->id()->value());
-        $typeChangeModel->tc_venta = $typeChange->sales()->value();
-        $typeChangeModel->tc_compra = $typeChange->buy()->value();
-        $typeChangeModel->save();
+        $this->model->where("id", $typeChange->id()->value())->update(["tc_venta" => $typeChange->sales()->value(), "tc_compra" => $typeChange->buy()->value(), "deleted_at" => null]);
     }
     function delete(TypeChangeId $id)
     {

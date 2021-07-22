@@ -10,8 +10,15 @@
 
 @section('content')
 <div class="row justify-content-center">
-    <form class="col-sm-12 col-md-4" method="POST" action="/tc/create">
+    <form class="col-sm-12 col-md-4" method="POST" action="/tc/update">
         @csrf
+        <div class=" row d-none">
+            <div class="col-12">
+                <div class="mb-3">
+                    <input class="form-control" value="{{$typeChange['id']}}" type="number" name="id">
+                </div>
+            </div>
+        </div>
         <div class=" row">
             <div class="col-12">
                 <div class="mb-3">

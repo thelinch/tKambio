@@ -20,6 +20,7 @@ Route::post('/auth', "LoginController@__invoke");
 Route::middleware('auth')->prefix("tc")->group(function () {
     Route::get("all", "typeChangeGetController@__invoke");
     Route::post("create", "typeChangeCreateController@__invoke");
+    Route::post("/update", "typeChangeUpdateController@__invoke");
     Route::get("edit/{typeChange}", "typeChangeRenderController@__invoke");
     Route::get("/delete/{typeChange}", "typeChangeDeleteController@__invoke");
     Route::get("create", function () {

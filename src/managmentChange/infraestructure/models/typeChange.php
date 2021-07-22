@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class typeChange extends Model
 {
-    
+    use SoftDeletes;
+
 
     use HasFactory;
     protected $table = "change_type";
