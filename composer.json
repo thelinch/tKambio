@@ -10,9 +10,9 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.40",
-        "laravel/tinker": "^2.5",
         "laravel/passport": "^9.2",
-        "laravel/ui": "^2.0",
+        "laravel/tinker": "^2.5",
+        "laravel/ui": "2.4",
         "lezhnev74/prooph-direct-router": "^1.0",
         "prooph/common": "^4.4",
         "prooph/service-bus": "^6.2",
@@ -20,7 +20,6 @@
         "rosamarsky/laravel-command-bus": "^2.0",
         "spatie/laravel-model-states": "^1.6",
         "spatie/laravel-permission": "^3.13"
-
     },
     "require-dev": {
         "facade/ignition": "^2.5",
