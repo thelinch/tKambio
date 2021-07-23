@@ -5,14 +5,20 @@
 @section('content')
 <h5 class="d-flex justify-content-between mt-2">
     <span>Lista de tipo de cambios</span>
+    @hasrole('admin')
     <a class="btn btn-primary" href="/tc/create">Crear </a>
+    @endhasrole
+
 
 </h5>
 <table class="table table-striped">
     <thead>
         <th>Venta</th>
         <th>Compra</th>
+        @hasrole('admin')
         <th>Acciones</th>
+        @endhasrole
+
 
     </thead>
     <tbody>
@@ -21,9 +27,12 @@
 
             <td>{{ $typeChange['tc_venta'] }}</td>
             <td>{{ $typeChange['tc_compra'] }}</td>
+            @hasrole('admin')
             <td>
-                <a class="btn btn-primary mr-2" href="/tc/edit/{{$typeChange['id']}}">Editar</a><a class="btn btn-danger" click="deleteTc()" data-id="{{$typeChange['id']}}">Eliminar</a>
+                <a class="btn btn-primary mr-2" href="/tc/edit/{{$typeChange['id']}}">Editar</a><a class="btn btn-danger eliminar" click="deleteTc()" data-id="{{$typeChange['id']}}">Eliminar</a>
             </td>
+            @endhasrole
+
 
         </tr>
 
@@ -58,7 +67,7 @@
     }
 
     function init() {
-        const deleteTcButtons = document.getElementsByClassName("btn-danger")
+        const deleteTcButtons = document.getElementsByClassName("eliminar")
         for (let index = 0; index < deleteTcButtons.length; index++) {
             const element = deleteTcButtons[index];
             element.addEventListener("click", function(event) {

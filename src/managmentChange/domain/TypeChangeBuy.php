@@ -1,6 +1,6 @@
 <?php
 
-namespace managmentChange\Domain;
+namespace managmentChange\domain;
 use src\Shared\Domain\ValueObject\FloatValueObject;
 
 class TypeChangeBuy extends  FloatValueObject{

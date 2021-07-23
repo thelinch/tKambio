@@ -1,5 +1,5 @@
 <?php
-namespace managmentChange\Domain;
+namespace managmentChange\domain;
 
 use src\Shared\Domain\ValueObject\StringValueObject;
 

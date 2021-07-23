@@ -2,7 +2,7 @@
 
 use \Illuminate\Support\Collection;
 
-namespace managmentChange\Domain;
+namespace managmentChange\domain;
 
 interface TypeChangeIRepository
 {

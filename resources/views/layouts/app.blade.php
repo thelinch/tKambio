@@ -10,6 +10,9 @@
 
 
     <div class="container">
+        <div class="row justify-content-end">
+            <a type="button" class="btn float-end btn-danger btn-sm mt-2" href="/">Cerrar Sesion</a>
+        </div>
         @yield('content')
     </div>
 </body>
