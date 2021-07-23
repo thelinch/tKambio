@@ -2,11 +2,11 @@
 
 namespace managmentChange\Infraestructure;
 
-use managmentChange\Domain\TypeChangeBuy;
-use managmentChange\Domain\TypeChangeDomain;
-use managmentChange\Domain\TypeChangeId;
-use managmentChange\Domain\TypeChangeIRepository;
-use managmentChange\Domain\TypeChangeSales;
+use managmentChange\domain\TypeChangeBuy;
+use managmentChange\domain\TypeChangeDomain;
+use managmentChange\domain\TypeChangeId;
+use managmentChange\domain\TypeChangeIRepository;
+use managmentChange\domain\TypeChangeSales;
 use managmentChange\infraestructure\models\typeChange;
 
 class EloquentTypeChangeRepository implements TypeChangeIRepository

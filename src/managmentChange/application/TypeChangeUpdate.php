@@ -2,8 +2,8 @@
 
 namespace managmentChange\application;
 
-use managmentChange\Domain\TypeChangeDomain;
-use managmentChange\Domain\TypeChangeIRepository;
+use managmentChange\domain\TypeChangeDomain;
+use managmentChange\domain\TypeChangeIRepository;
 
 class TypeChangeUpdate
 {

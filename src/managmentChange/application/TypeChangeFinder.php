@@ -7,7 +7,7 @@ use managmentChange\domain\TypeChangeBuy;
 use managmentChange\domain\TypeChangeSales;
 use managmentChange\domain\TypeChangeId;
 use managmentChange\domain\TypeChangeDomain;
-use managmentChange\Domain\TypeChangeNotFound;
+use managmentChange\domain\TypeChangeNotFound;
 
 class TypeChangeFinder
 {
