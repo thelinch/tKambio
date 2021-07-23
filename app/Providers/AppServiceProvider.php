@@ -8,12 +8,10 @@ use managmentChange\application\TypeChangeDelete;
 use managmentChange\application\TypeChangeFinder;
 use managmentChange\application\TypeChangeList;
 use managmentChange\application\TypeChangeUpdate;
-use managmentChange\Domain\TypeChangeIRepository;
-use managmentChange\Infraestructure\EloquentTypeChangeRepository;
+use managmentChange\domain\TypeChangeIRepository;
+use managmentChange\infraestructure\EloquentTypeChangeRepository;
 use src\Shared\Domain\Bus\Event\EventBus;
-use src\Shared\Domain\UuidGenerator;
 use src\Shared\Infraestructure\Bus\Event\LaravelEventBus;
-use src\Shared\Infraestructure\RamseyUuidGenerator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,7 +27,6 @@ class AppServiceProvider extends ServiceProvider
             TypeChangeIRepository::class,
             EloquentTypeChangeRepository::class,
         );
-        $this->app->bind(UuidGenerator::class, RamseyUuidGenerator::class);
         $this->app->bind(EventBus::class, LaravelEventBus::class);
 
         $this->app->bind("TypeChangeCreate", function ($app) {
