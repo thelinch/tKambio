@@ -7,7 +7,7 @@ use managmentChange\Domain\TypeChangeDomain;
 use managmentChange\Domain\TypeChangeId;
 use managmentChange\Domain\TypeChangeIRepository;
 use managmentChange\Domain\TypeChangeSales;
-use managmentChange\models\Infraestructure\typeChange;
+use managmentChange\infraestructure\models\typeChange;
 
 class EloquentTypeChangeRepository implements TypeChangeIRepository
 {

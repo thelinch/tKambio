@@ -1,5 +1,5 @@
 <?php
-namespace managmentChange\Domain;
+namespace managmentChange\domain;
 
 use JsonSerializable;
 use src\Shared\Domain\Aggregate\AggregateRoot;
